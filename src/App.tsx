@@ -12,10 +12,12 @@ function App() {
   const [fontStyle, setFontStyle] = useState("normal")
   const [fontWeight, setFontWeight] = useState(400)
   const [fontFamily, setFontFamily] = useState("default")
+  const [border, setBorder] = useState("2px solid transparent")
+  const [backgroundColor, setBackgroundColor] = useState("#fafafa")
 
   return (
     <>
-      <Toast style={{ color: color, fontFamily: fontFamily, fontStyle: fontStyle }}/>
+      <Toast style={{ color: color, fontFamily: fontFamily, fontStyle: fontStyle, fontWeight: fontWeight, border: border, backgroundColor: backgroundColor }}/>
       <div>
         <button onClick={() => Location.update(Location.topLeft)}>
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -70,6 +72,10 @@ function App() {
           <option>'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif</option>
           <option>default</option>
         </select>
+        <label style={{marginRight: 5}}>Border:</label>
+        <input type="text" value={ border } onChange={ e => setBorder(e.currentTarget.value) } style={{ width: 150, marginRight: 5 }} />
+        <label style={{marginRight: 5}}>Background Color:</label>
+        <input type="text" value={ backgroundColor } onChange={ e => setBackgroundColor(e.currentTarget.value) } style={{ width: 50, marginRight: 5 }} />
       </div>
       <br/>
       <div>
