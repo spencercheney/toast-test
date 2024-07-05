@@ -1,8 +1,8 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import useToast from './toast/useToast'
 import { useState } from 'react'
+import useToast from 'toasty-react'
 
 function App() {
   const [Toast, open, Location] = useToast()
