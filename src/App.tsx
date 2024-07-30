@@ -1,12 +1,10 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { useState } from 'react'
 import useToast from 'toasty-react'
 
 function App() {
   const [Toast, open, Location] = useToast()
-  const [popupText, setPopupText] = useState("app open test")
+  const [popupText, setPopupText] = useState("Time to set the CSS Styling 😎")
   const [fontSize, setFontSize] = useState(16)
   const [color, setColor] = useState("black")
   const [fontStyle, setFontStyle] = useState("normal")
@@ -18,34 +16,17 @@ function App() {
   return (
     <>
       <Toast style={{ color: color, fontFamily: fontFamily, fontStyle: fontStyle, fontWeight: fontWeight, border: border, backgroundColor: backgroundColor }}/>
-      <div>
-        <button onClick={() => Location.update(Location.topLeft)}>
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </button>
-        <button onClick={() => Location.update(Location.bottomLeft)}>
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </button>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => open(<>{popupText}</>)}>
-          count is {0}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      <p className="read-the-docs" style={{marginBottom: 0, color: "black"}}>
+        Text that will be display on the toast
       </p>
       <input type="text" style={{ width: "100%", marginBottom: "10px" }} onChange={e => setPopupText(e.currentTarget.value)}  placeholder={popupText}/>
       <div>
-        <button onClick={() => Location.update(Location.topLeft)}>Top Left</button>
-        <button onClick={() => Location.update(Location.bottomLeft)}>Bottom Left</button>
-        <button onClick={() => Location.update(Location.topRight)}>Top Right</button>
-        <button onClick={() => Location.update(Location.bottomRight)}>Bottom Right</button>
-        <button onClick={() => Location.update(Location.topCenter)}>Top Center</button>
-        <button onClick={() => Location.update(Location.bottomCenter)}>Bottom Center</button>
+        <button onClick={() => Location.update(Location.topLeft)} style={{marginRight: 5}}>Top Left</button>
+        <button onClick={() => Location.update(Location.bottomLeft)} style={{marginRight: 5}}>Bottom Left</button>
+        <button onClick={() => Location.update(Location.topRight)} style={{marginRight: 5}}>Top Right</button>
+        <button onClick={() => Location.update(Location.bottomRight)} style={{marginRight: 5}}>Bottom Right</button>
+        <button onClick={() => Location.update(Location.topCenter)} style={{marginRight: 5}}>Top Center</button>
+        <button onClick={() => Location.update(Location.bottomCenter)} style={{marginRight: 5}}>Bottom Center</button>
       </div>
       <div>
         <label style={{marginRight: 5}}>Font Size:</label>
